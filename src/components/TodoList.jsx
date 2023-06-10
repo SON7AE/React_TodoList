@@ -1,7 +1,7 @@
 import './TodoList.css'
 import TODOITEM from './TodoItem'
 
-const TODOLIST = () => {
+const TODOLIST = ({ todo }) => {
     return (
         <div className="TodoList">
             <h4>Todo List 🌱</h4>
@@ -10,6 +10,12 @@ const TODOLIST = () => {
                 <TODOITEM />
                 <TODOITEM />
                 <TODOITEM />
+
+                <div className="list_wrapper">
+                    {todo.map((item) => (
+                        <div>{item.content}</div>
+                    ))}
+                </div>
             </div>
         </div>
     )
